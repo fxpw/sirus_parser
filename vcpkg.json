@@ -1,6 +1,13 @@
 {
 	"dependencies": [
 		"curl",
-		"openssl"
+		"openssl",
+		"nlohmann-json",
+		"stormlib",
+		{
+			"name": "curl",
+			"features":["openssl"],
+			"platform": "linux"
+		}
 	]
 }

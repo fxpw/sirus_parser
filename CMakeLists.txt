@@ -19,6 +19,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE vcpkg_installed/${VCPKG_TARGE
 
 find_package(CURL REQUIRED)
 find_package(OpenSSL REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
+find_package(nlohmann_json CONFIG REQUIRED)
+find_package(StormLib CONFIG REQUIRED)
+find_package(BZip2 REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl BZip2::BZip2 OpenSSL::SSL OpenSSL::Crypto nlohmann_json::nlohmann_json StormLib::storm)
 
 

@@ -6,8 +6,8 @@ ENV_FILE := .env
 include $(ENV_FILE)
 
 
-.PHONY: i_all pre_run
-all: i_all pre_run
+.PHONY: pre_run
+all: pre_run
 
 
 _check_vcpkg:
@@ -26,9 +26,8 @@ _install_vcpkg:
 	./bootstrap-vcpkg.sh && \
 	export PATH="$PATH:/usr/local/vcpkg" && \
 	echo 'export PATH="$PATH:/usr/local/vcpkg"' >> ~/.bashrc && \
-	source ~/.bashrc && \
 	/usr/local/vcpkg/vcpkg integrate install && \
-	chown -R $USER:$USER /usr/local/vcpkg
+	chown -R root:root /usr/local/vcpkg
 
 i_all:_check_vcpkg v_install
 
@@ -64,5 +63,5 @@ pre_build_debug:
 	&& \
 	make
 
-pre_run:pre_build_release
-	./build/"$(APP_NAME)"
+pre_run:pre_build_debug
+	./build/$(APP_NAME)

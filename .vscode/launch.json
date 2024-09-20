@@ -5,7 +5,7 @@
 			"name": "Debug",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/cpp20_cmake_vcpkg_template",
+			"program": "${workspaceFolder}/build/sirus_parser",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -19,13 +19,13 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "make_pre_build_debug",
+			// "preLaunchTask": "make_pre_build_debug",
 		},
 		{
 			"name": "Run",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/cpp20_cmake_vcpkg_template",
+			"program": "${workspaceFolder}/build/sirus_parser",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -39,7 +39,7 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "make_pre_build_release",
+			// "preLaunchTask": "make_pre_build_release",
 		}
 	]
 }
